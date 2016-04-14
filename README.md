@@ -2,13 +2,13 @@
 
 A collection of [gulp](http://gulpjs.com/) recipes that I have been using for automating my front-end development workflow.  
 
-Gulp is a task runner (written in [Node](https://nodejs.org/en/)) for automating common development tasks.  At it's core, gulp is about streams.  You can take a set of "source" files, apply some transformations to them (e.g. minifying, converting SASS to CSS, etc.) and then save them out without needing any temporary files during those transformations.  You can also set up these gulp tasks to run anytime a particular file is changed (e.g. anytime a SASS file is modified, rebuild the SASS into CSS).
+Gulp is a task runner (written in [Node.js](https://nodejs.org/en/)) for automating common development tasks.  At it's core, gulp is about streams.  You can take a set of "source" files, apply some transformations to them (e.g. minifying, converting SASS to CSS, etc.) and then save them out without needing any temporary files during those transformations.  You can also set up these gulp tasks to run anytime a particular file is changed (e.g. anytime a SASS file is modified, rebuild the SASS into CSS).
 
 ## Installation
 
 Setting up gulp (see gulp's [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)):
 
-1. Install [Node](https://nodejs.org/en/).
+1. Install [Node.js](https://nodejs.org/en/).
 2. Install the gulp command line tool (globally) via terminal: `npm install -g gulp-cli`.
 
 Running a particular gulp project in this repository:
