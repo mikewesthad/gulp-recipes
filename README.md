@@ -14,7 +14,7 @@ Setting up gulp (see gulp's [Getting Started](https://github.com/gulpjs/gulp/blo
 Running a particular gulp project in this repository:
 
 1. Clone the repository
-2. Open terminal in one of the project folders (e.g. "blank/"), and run `npm intall` to install the packages needed.
+2. Open terminal in one of the project folders (e.g. "01-blank/"), and run `npm intall` to install the packages needed.
 3. In terminal, run `gulp` to start up the default gulp task.
 
 ## License
