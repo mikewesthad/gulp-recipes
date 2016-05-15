@@ -1,6 +1,20 @@
 /**
  * p5.js Gulp Template
- * A JS-focused gulp recipe
+ * 
+ * This is a "trimmed," JS-focused gulp recipe.  It's built for use with p5.js,
+ * a creative coding library. It's a midway point between a teaching demo and a
+ * full "kitchen sink" workflow (leaning closer to the latter than the former).
+ * 
+ * The recipe provides:
+ * 
+ * - A local server
+ * - CommonJS modules via browserify
+ * - A LiveReload server to trigger browser refresh upon saving
+ * - A deploy task for uploading to GitHub Pages
+ *
+ * Run "gulp" to start the default task, which builds the site and serves it.
+ * Run with the command line flag "gulp -p" or "gulp --production" to enable
+ * uglification of JS code. It is helpful while developing to NOT uglify code. 
  */
 
 
