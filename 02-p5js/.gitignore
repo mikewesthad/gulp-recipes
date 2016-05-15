@@ -1,0 +1,8 @@
+# Build folder
+build/
+
+# Gulp gh-pages deployment temporary folder
+.publish
+
+# Node modules
+node_modules
