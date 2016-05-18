@@ -102,7 +102,10 @@ gulp.task("js-custom", function() {
         debug: true
     })
     return b.bundle()
-        .on("error", gutil.log)
+        .on("error", function (err) {
+            gutil.log(err);
+            this.emit("end");
+        })
         .pipe(source("main.js"))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
