@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Angular 2 Tour of Heroes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="./lib/angular2-polyfills.js"></script>
+    <script src="./lib/system.src.js"></script>
+    <script src="./lib/es6-shim.js"></script>
+    <script src="./lib/angular2.min.js"></script>
+    <script src="./lib/Rx.js"></script>
+    <script src="./lib/router.min.js"></script>
+    <script src="./lib/http.min.js"></script>
+
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app/main')
+            .catch(function(err){
+              console.error(err);
+            });
+    </script>
+  </head>
+
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+</html>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
