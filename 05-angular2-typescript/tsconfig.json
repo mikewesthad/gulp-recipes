@@ -5,24 +5,11 @@
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
-    "declaration": true,
-    "noImplicitAny": true,
-    "removeComments": false,
-    "noLib": false,
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "listFiles": true
+    "removeComments": false,
+    "noImplicitAny": false
   },
-  "files": [
-    "node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
-    "node_modules/angular2/bundles/typings/angular2/http.d.ts",
-    "node_modules/angular2/bundles/typings/angular2/router.d.ts",
-    "node_modules/@reactivex/rxjs/es6/R.d.ts",
-    "src/tester-file.ts"
-  ],
-  "filesGlob": [
-    "src/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "typings"]
 }
