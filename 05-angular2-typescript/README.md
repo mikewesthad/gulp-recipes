@@ -52,4 +52,4 @@ npm install
 
 ## Notes
 
-One of the challenges of setting up an Angular2 project is the upgrade to 2.00-rc1.  This introduced breaking changes to the framework, and makes a lot of the tutorials Angular2 tutorials outdated. [More Info](https://github.com/angular/angular/blob/master/CHANGELOG.md).
+One of the challenges of setting up an Angular2 project is the upgrade to 2.00-rc1.  This introduced breaking changes to the framework, and makes a lot of the Angular2 tutorials outdated. [More Info](https://github.com/angular/angular/blob/master/CHANGELOG.md).
