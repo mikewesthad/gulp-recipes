@@ -1,8 +1,7 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: '<h1>My Second Angular 2 App</h1>'
+  template: '<h2>Welcome to the Angular2-Typescript-Gulp pipeline!</h2>'
 })
-
-export class AppComponent {}
+export class AppComponent { }
