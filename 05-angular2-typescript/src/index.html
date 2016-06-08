@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>document.write('<base href="' + document.location + '" />');</script>
+
+    <!-- Setup Angular 2 Routing -->
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+
+    <!-- Setup livereload extension
+        *** Remove for production builds *** -->
+    <script>
+     if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+     }
+   </script>
+
     <title>Angular 2 Tour of Heroes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./styles/styles.css">
-
     <!-- Polyfill(s) for older browsers -->
-    <script src="./lib/angular2-polyfills.js"></script>
-    <script src="./lib/system.src.js"></script>
-    <script src="./lib/es6-shim.js"></script>
-    <script src="./lib/angular2.min.js"></script>
-    <script src="./lib/Rx.js"></script>
-    <script src="./lib/router.min.js"></script>
-    <script src="./lib/http.min.js"></script>
+    <script src="lib/es6-shim/es6-shim.min.js"></script>
+    <script src="lib/zone.js/dist/zone.js"></script>
+    <script src="lib/reflect-metadata/Reflect.js"></script>
+    <script src="lib/systemjs/dist/system.src.js"></script>
 
-
+    <!-- Setup Angular2 app -->
     <script src="systemjs.config.js"></script>
     <script>
       System.import('app/main')
-            .catch(function(err){
-              console.error(err);
-            });
+            .catch(function(err){ console.error(err);});
     </script>
   </head>
 
   <body>
+    <h1>Angular 2 Quickstart</h1>
     <my-app>Loading...</my-app>
   </body>
 </html>
-
-
-<!-- 
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
