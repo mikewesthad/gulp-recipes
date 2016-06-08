@@ -9,10 +9,10 @@ This pipeline takes advantage of Gulp, an automation tool for web-development.  
 - Make sure you have [Node.js](https://nodejs.org/en/) installed!
 - Download/clone this project to a local folder
 - Navigate to the folder, and install project dependencies
-    ```
-    cd <project/directory>
-    npm install
-    ```
+```
+cd <project/directory>
+npm install
+```
 - Run `gulp init` or `npm init` to complete the initial setup of the project.  This will create a 'dist' folder, and copy any necessary libraries and static files over.  This will also lint/transpile the typescript files, and move them to the 'dist' folder.
 - Run `gulp` or `npm start` to start a local server, open your project, and begin monitoring files for changes.  File changes should trigger the browser to refresh.  This will also lint/transpile typescript files.
 
