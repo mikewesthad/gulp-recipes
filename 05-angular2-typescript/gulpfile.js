@@ -8,71 +8,104 @@
  * - LiveReload extension to trigger a browser refresh when files are changed
  */
 
-// from http://chariotsolutions.com/blog/post/typescript-angular2-starter-project-walkthrough-file-watcher-pipeline/
 
 
 // -- SETUP --------------------------------------------------------------------
 // Gulp & gulp plugins
-var gulp = require('gulp'),
-    express = require('express'),
-    livereload = require('gulp-livereload'),
-    open = require('gulp-open'),
-    ts = require('gulp-typescript'),
-    sourcemaps = require('gulp-sourcemaps'),
-    merge = require('merge2');
+var gulp = require('gulp');
+var changed = require("gulp-changed");
+var del = require('del');
+var express = require('express');
+var liveReload = require('gulp-livereload');
+var open = require('gulp-open');
+var runSequence = require('run-sequence');
+var sourcemaps = require('gulp-sourcemaps');
+var ts = require('gulp-typescript');
+var tslint = require('gulp-tslint');
+
+// load tsconfig file
+var tsProject = ts.createProject('tsconfig.json');
+
 
 
 // -- BUILD TASKS --------------------------------------------------------------
+
+// Remove the dist directory
+gulp.task('clean', function() {
+    return del('dist');
+});
+
 // Pipe vendor library files to 'dist' folder
-gulp.task('vendor-libs', function() {
-    // js files go to 'dist/libs'
-    gulp.src(['node_modules/angular2/bundles/angular2-polyfills.js',
-              'node_modules/angular2/bundles/angular2.min.js',
-              'node_modules/angular2/bundles/http.min.js',
-              'node_modules/angular2/bundles/router.min.js',
-              'node_modules/es6-shim/es6-shim.js',
-              'node_modules/systemjs/dist/system.src.js',
-              'node_modules/rxjs/bundles/Rx.js'
-            ])
+gulp.task('vendor-libs', function () {
+    return gulp.src([
+            'es6-shim/es6-shim.min.js',
+            'systemjs/dist/system-polyfills.js',
+            'systemjs/dist/system.src.js',
+            'reflect-metadata/Reflect.js',
+            'rxjs/**',
+            'zone.js/dist/**',
+            '@angular/**',
+            'angular2-in-memory-web-api/**'
+        ], { cwd: "node_modules/**" }) /* use glob here */
+        .pipe(changed('dist/lib'))
         .pipe(gulp.dest('dist/lib'));
 });
 
 // Pipe static assets to 'dist' folder
 gulp.task('static-assets', function() {
-    gulp.src(['./src/**/*.json',
-              './src/**/*.html',
-              './src/**/*.css',
-              './src/systemjs.config.js'
-            ])
-        .pipe(gulp.dest('./dist'))
-        .pipe(livereload());
+    return gulp.src(['src/**/*.json',
+            'src/**/*.html',
+            'src/**/*.css',
+            'src/systemjs.config.js'
+        ])
+        .pipe(changed('dist'))
+        .pipe(gulp.dest('dist'))
+        .pipe(liveReload());
 });
 
-// Transpile typescript
-// load tsconfig file
-var tsConfig = require('./tsconfig.json');
-gulp.task('transpile-ts', function(done) {
-    gulp.src('src/**/*.ts')
+// Typescript transpiler
+gulp.task('transpile', ['tslint'], function() {
+    return gulp.src('src/**/*.ts')
+//        .pipe(changed('dist', {extension: '.js'}))
         .pipe(sourcemaps.init())
-        .pipe(ts(tsConfig.compilerOptions))
-        .pipe(sourcemaps.write('./app/maps'))
-        .pipe(gulp.dest('dist/'))
-        .pipe(livereload());
+        .pipe(ts(tsProject))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'))
+        .pipe(liveReload());
+});
+
+// Typescript Linter
+gulp.task('tslint', function() {
+    return gulp.src('src/**/*.ts')
+        .pipe(tslint())
+        .pipe(tslint.report('prose', {
+            emitError: false // set to true to stop the compiler on any error
+        }));
+});
+
+// 'Initialization' task
+gulp.task('init', function(cb) {
+  runSequence('clean', 'vendor-libs', 'static-assets', 'transpile', cb);
 });
 
 // 'Build' task
-gulp.task('build', ['vendor-libs', 'static-assets', 'transpile-ts']);
+gulp.task('build', function(cb) {
+  runSequence('static-assets', 'transpile', cb);
+});
+
 
 
 // -- RUN TASKS ----------------------------------------------------------------
 
 gulp.task('watch', function() {
-    livereload.listen();
-    gulp.watch(['./src/**/*.json',
-                './src/**/*.html',
-                './src/**/*.css'],
+    liveReload.listen();
+    gulp.watch(['src/**/*.ts'],
+               ['transpile']);
+    gulp.watch(['src/**/*.json',
+                'src/**/*.html',
+                'src/**/*.css',
+                'src/**/*.ts'],
                ['static-assets']);
-    gulp.watch(['./src/**/*.ts', ['transpile-ts']]);
 });
 
 gulp.task('express-server', function() {
@@ -88,16 +121,21 @@ gulp.task('open', function() {
         uri: 'http://127.0.0.1:8080'
     };
 
-    gulp.src('./dist')
+    return gulp.src('dist')
         .pipe(open(options));
 });
 
 gulp.task('run', ['watch', 'express-server', 'open']);
 
 
+
 // -- DEPLOY TASKS -------------------------------------------------------------
+// *** no deployment yet... ***
 
 
 // -- DEFAULT TASK -------------------------------------------------------------
-gulp.task('default', ['build', 'run']);
 
+// Build and then run it.
+gulp.task('default', function(cb) {
+    runSequence('build', 'run', cb);
+});
