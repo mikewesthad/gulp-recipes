@@ -4,11 +4,11 @@
   "description": "test for angular2/typescript dev pipeline",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "gulp clean",
     "init": "gulp init",
     "build": "gulp build",
     "transpile": "gulp transpile",
+    "format": "gulp format",
     "start": "gulp",
     "postinstall": "typings install"
   },
@@ -22,8 +22,10 @@
     "gulp-livereload": "^3.8.1",
     "gulp-open": "^2.0.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tsfmt": "^1.0.2",
     "gulp-tslint": "^5.0.0",
     "gulp-typescript": "^2.13.6",
+    "gulp-util": "^3.0.7",
     "run-sequence": "^1.2.1",
     "tslint": "^3.10.2",
     "typescript": "^1.8.10",
