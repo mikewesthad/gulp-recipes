@@ -15,6 +15,7 @@ npm install
 ```
 - Run `gulp init` or `npm init` to complete the initial setup of the project.  This will create a 'dist' folder, and copy any necessary libraries and static files over.  This will also lint/transpile the typescript files, and move them to the 'dist' folder.
 - Run `gulp` or `npm start` to start a local server, open your project, and begin monitoring files for changes.  File changes should trigger the browser to refresh.  This will also lint/transpile typescript files.
+- Run 'gulp format' or 'npm format' to format all of the .ts files in a consistent way.  Use this before uploading code to a a repo!
 
 
 ## Development Tools:
