@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist/app",
+    "outDir": "build/app",
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
@@ -11,5 +11,5 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "exclude": ["node_modules", "dist", "typings"]
+  "exclude": ["node_modules", "build", "typings"]
 }
