@@ -29,9 +29,9 @@ npm install
 
 
 ## Useful Tutorials
- - [CodeLeak - Quickstart w/ Angular2, Typescript and Gulp](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html) - [Repo](https://github.com/kolorobot/angular2-typescript-gulp)
- - [Scotts Blog - Creating an Angular2 Build w/ Gulp](http://blog.scottlogic.com/2015/12/24/creating-an-angular-2-build.html) - [Repo](https://github.com/ColinEberhardt/angular2-tour-of-heroes)
- - [Angular Tips - Intro to Angular2](http://angular-tips.com/blog/2015/05/an-introduction-to-angular-2/) - [Repo](https://github.com/angular-tips/GermanWords-frontend-angular-2)
+ - [CodeLeak - Quickstart w/ Angular2, Typescript and Gulp](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html)  |  [Repo](https://github.com/kolorobot/angular2-typescript-gulp)
+ - [Scotts Blog - Creating an Angular2 Build w/ Gulp](http://blog.scottlogic.com/2015/12/24/creating-an-angular-2-build.html)  |  [Repo](https://github.com/ColinEberhardt/angular2-tour-of-heroes)
+ - [Angular Tips - Intro to Angular2](http://angular-tips.com/blog/2015/05/an-introduction-to-angular-2/)  |  [Repo](https://github.com/angular-tips/GermanWords-frontend-angular-2)
  - [Angular2 - NPM Packages](https://angular.io/docs/ts/latest/guide/npm-packages.html)
 
 
