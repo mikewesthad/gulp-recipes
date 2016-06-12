@@ -17,6 +17,10 @@ Running a particular gulp project in this repository:
 2. Open terminal in one of the project folders (e.g. "01-blank/"), and run `npm intall` to install the packages needed.
 3. In terminal, run `gulp` to start up the default gulp task.
 
+## Contributors
+
+- retwedt
+
 ## License
 >You can check out the full license [here](https://github.com/mikewesthad/emojify/blob/master/license.md)
 
