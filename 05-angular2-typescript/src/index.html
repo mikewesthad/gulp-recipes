@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Setup Angular 2 Routing -->
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+
+    <!-- Setup livereload extension
+        *** Remove for production builds *** -->
+    <script>
+     if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+     }
+   </script>
+
+    <title>Angular 2 Tour of Heroes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="lib/es6-shim/es6-shim.min.js"></script>
+    <script src="lib/zone.js/dist/zone.js"></script>
+    <script src="lib/reflect-metadata/Reflect.js"></script>
+    <script src="lib/systemjs/dist/system.src.js"></script>
+
+    <!-- Setup Angular2 app -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app/main')
+            .catch(function(err){ console.error(err);});
+    </script>
+  </head>
+
+  <body>
+    <h1>Angular2 Quickstart</h1>
+    <my-app>Loading...</my-app>
+  </body>
+</html>

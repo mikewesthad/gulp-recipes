@@ -1,0 +1,18 @@
+# Sublime projects
+*.sublime-workspace
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Build folder
+build
+dist
+
+# Dependency directory
+node_modules
+
+# Type definitions for typescript transpiler
+typings
+

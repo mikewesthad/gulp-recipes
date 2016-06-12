@@ -1,0 +1,22 @@
+{
+  "name": "sass-compiler",
+  "version": "0.0.0",
+  "description": "Include these files in a 'dist' version of a library, for easily creating builds with customized SASS.",
+  "author": "Rex Twedt",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repo-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/repo-name.git/issues"
+  },
+  "homepage": "https://github.com/username/repo-name.git#readme"
+}
